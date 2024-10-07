@@ -1,4 +1,6 @@
 @import 'base.css';
+@import 'typography.css';
+
 @import 'sidebar.css';
 @import 'header.css';
 @import 'realtors.css';

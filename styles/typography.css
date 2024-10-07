@@ -1,0 +1,20 @@
+.heading-1,
+.heading-2,
+.heading-3,
+.heading-4 {
+    font-family: var(--font-display);
+    font-weight: 400;
+}
+
+.heading-4 {
+    font-size: 1.9rem;
+    color: var(--color-grey-dark-2);
+}
+
+.headint-4--light {
+    color: var(--color-grey-light-1);
+}
+
+.heading-4--dark {
+    color: var(--color-grey-dark-1);
+}
