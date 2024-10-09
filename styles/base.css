@@ -14,7 +14,17 @@
 */
     --font-primary: 'Nunito', sans-serif;
     --font-display: 'Josefin Sans', sans-serif;
+/* 
+    RESPONSIVE BREAKPOINTS
+*/
+    --bp-largest: 75em; /* 1200px */
+    --bp-large: 62.5em; /* 1000px */
+    --bp-medium: 50em; /* 800px */
+    --bp-small: 37.5em; /* 600px */
+    --bp-smallest: 31.25em; /* 500px */
 }
+
+
 
 *,
 *::before,
@@ -29,6 +39,12 @@ html {
     font-size: 62.5%; /* 1rem = 10px, 10px/16px = 62.5% */
 }
 
+@media only screen and (max-width: 75em) {
+    html {
+        font-size: 50%; /* 1rem = 8px, 8px/16px = 50% */
+    }
+}
+
 body {
     font-family: var(--font-primary);
     font-weight: 300;
@@ -40,6 +56,17 @@ body {
     display: grid;
     grid-template-rows: 80vh min-content 40vw min-content repeat(3, min-content);
     grid-template-columns: [sidebar-start] 8rem [sidebar-end full-start] minmax(6rem, 1fr) [center-start] repeat(8,[col-start] minmax(min-content, 14rem) [col-end]) [center-end] minmax(6rem, 1fr) [full-end];
+}
 
-   
+@media only screen and (max-width: 62.5em) {
+    .container {
+        grid-template-rows: 6rem 80vh min-content 40vw min-content repeat(3, min-content);
+        grid-template-columns: [full-start] minmax(6rem, 1fr) [center-start] repeat(8,[col-start] minmax(min-content, 14rem) [col-end]) [center-end] minmax(6rem, 1fr) [full-end];
+    }
+}
+
+@media only screen and (max-width: 50em) {
+    .container {
+        grid-template-rows: 6rem calc(100vh - 6rem);
+    }
 }

@@ -8,10 +8,22 @@
     padding-top: 4rem;
 
     display: grid;
-    grid-template-rows: 1fr min-content 6rem 1fr;
-    grid-template-columns: max-content;
+    grid-template-rows: 1fr min-content minmax(6rem, min-content) 1fr;
+    grid-template-columns: minmax(min-content, max-content);
     grid-row-gap: 1.5rem;
     justify-content: center;
+}
+
+@media only screen and (max-width: 50em) {
+    .header {
+        grid-column: full-start / full-end;
+    }
+}
+
+@media only screen and (max-width: 37.5em) {
+    .header {
+        padding: 5rem;
+    }
 }
 
 .header__logo {
@@ -38,10 +50,12 @@
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     justify-items: center;
+    align-items: center;
     grid-column-gap: 3rem;
 } 
 .header__seenon-logos img{
-    height: 2.5rem;
+    max-height: 2.5rem;
+    max-width: 100%;
     filter: brightness(70%);
 }
 
